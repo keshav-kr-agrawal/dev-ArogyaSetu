@@ -19,20 +19,20 @@ function initializeWebsite() {
 function setupMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-    
+
     if (!hamburger || !navMenu) return;
-    
+
     hamburger.addEventListener('click', function() {
         const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-        
+
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         hamburger.setAttribute('aria-expanded', !isExpanded);
-        
+
         // Prevent body scroll when menu is open
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
-    
+
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', function() {
@@ -42,7 +42,7 @@ function setupMobileMenu() {
             document.body.style.overflow = '';
         });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
         if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
@@ -58,10 +58,10 @@ function setupMobileMenu() {
 function setupScrollEffects() {
     const header = document.querySelector('.header');
     let lastScrollY = window.scrollY;
-    
+
     window.addEventListener('scroll', function() {
         const currentScrollY = window.scrollY;
-        
+
         // Header background effect
         if (currentScrollY > 100) {
             header.style.background = 'rgba(79, 70, 229, 0.95)';
@@ -70,14 +70,14 @@ function setupScrollEffects() {
             header.style.background = 'linear-gradient(135deg, #4F46E5 0%, #6366f1 100%)';
             header.style.backdropFilter = 'none';
         }
-        
+
         // Parallax effect for hero section
         const hero = document.querySelector('.hero');
         if (hero) {
             const rate = currentScrollY * -0.5;
             hero.style.transform = `translateY(${rate}px)`;
         }
-        
+
         lastScrollY = currentScrollY;
     }, { passive: true });
 }
@@ -89,11 +89,11 @@ function setupSmoothScrolling() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const target = document.querySelector(targetId);
-            
+
             if (target) {
                 const headerHeight = document.querySelector('.header').offsetHeight;
                 const targetPosition = target.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -112,7 +112,7 @@ function setupButtonHandlers() {
             showNotification('Login functionality will be implemented here!', 'info');
         });
     }
-    
+
     // Signup button
     const signupBtn = document.querySelector('.btn-signup');
     if (signupBtn) {
@@ -120,7 +120,7 @@ function setupButtonHandlers() {
             showNotification('Sign up functionality will be implemented here!', 'info');
         });
     }
-    
+
     // Get Started button
     const getStartedBtn = document.querySelector('.btn-primary');
     if (getStartedBtn) {
@@ -134,17 +134,17 @@ function setupButtonHandlers() {
 function setupAnimations() {
     // Add hover effects to interactive elements
     const interactiveElements = document.querySelectorAll('.btn, .nav-link, .service-card');
-    
+
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-2px)';
         });
-        
+
         element.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
         });
     });
-    
+
     // Typing effect for hero title
     const heroTitle = document.querySelector('#hero-title');
     if (heroTitle) {
@@ -153,14 +153,14 @@ function setupAnimations() {
             typeWriter(heroTitle, originalText, 80);
         }, 1000);
     }
-    
+
     // Logo floating animation
     const logo = document.querySelector('.logo');
     if (logo) {
         logo.addEventListener('mouseenter', function() {
             this.style.animation = 'float 2s ease-in-out infinite';
         });
-        
+
         logo.addEventListener('mouseleave', function() {
             this.style.animation = 'heartbeat 2s infinite';
         });
@@ -174,7 +174,7 @@ function setupAccessibility() {
         if (e.key === 'Escape') {
             const hamburger = document.querySelector('.hamburger');
             const navMenu = document.querySelector('.nav-menu');
-            
+
             if (navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
@@ -183,7 +183,7 @@ function setupAccessibility() {
             }
         }
     });
-    
+
     // Focus management
     const focusableElements = document.querySelectorAll('button, a, input, textarea, select');
     focusableElements.forEach(element => {
@@ -191,7 +191,7 @@ function setupAccessibility() {
             this.style.outline = '2px solid #4F46E5';
             this.style.outlineOffset = '2px';
         });
-        
+
         element.addEventListener('blur', function() {
             this.style.outline = '';
             this.style.outlineOffset = '';
@@ -203,7 +203,7 @@ function setupAccessibility() {
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
-    
+
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -211,7 +211,7 @@ function typeWriter(element, text, speed = 100) {
             setTimeout(type, speed);
         }
     }
-    
+
     type();
 }
 
@@ -222,7 +222,7 @@ function showNotification(message, type = 'info') {
     if (existingNotification) {
         existingNotification.remove();
     }
-    
+
     // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
@@ -232,7 +232,7 @@ function showNotification(message, type = 'info') {
             <button class="notification-close" aria-label="Close notification">×</button>
         </div>
     `;
-    
+
     // Add styles
     notification.style.cssText = `
         position: fixed;
@@ -248,22 +248,22 @@ function showNotification(message, type = 'info') {
         transition: transform 0.3s ease;
         max-width: 300px;
     `;
-    
+
     // Add to page
     document.body.appendChild(notification);
-    
+
     // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
-    
+
     // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => notification.remove(), 300);
     });
-    
+
     // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
@@ -279,7 +279,7 @@ function setupIntersectionObserver() {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -287,7 +287,7 @@ function setupIntersectionObserver() {
             }
         });
     }, observerOptions);
-    
+
     // Observe service cards
     document.querySelectorAll('.service-card').forEach(card => {
         observer.observe(card);
@@ -361,3 +361,73 @@ additionalStyles.textContent = `
 `;
 
 document.head.appendChild(additionalStyles); 
+
+
+function getDiagnosis() {
+  const inputField = document.getElementById("symptom-input");
+  const input = inputField.value.toLowerCase().trim();
+  const symptoms = input.replace(/,/g, '').split(/\s+/);
+
+  const resultSection = document.getElementById("result-section");
+  const diseaseName = document.getElementById("disease-name");
+  const testList = document.getElementById("test-list");
+  const doctorType = document.getElementById("doctor-type");
+
+  // Clear previous results
+  diseaseName.textContent = "";
+  testList.innerHTML = "";
+  doctorType.textContent = "";
+  resultSection.classList.add("hidden");
+
+  if (input === "") {
+    diseaseName.textContent = "Please enter some symptoms above to get suggestions.";
+    return;
+  }
+
+  let mockDiagnosis = {
+    disease: "General Viral Infection",
+    tests: ["CBC (Complete Blood Count)", "Throat Swab", "Rapid Antigen Test"],
+    doctor: "General Physician"
+  };
+
+  if (symptoms.includes("fever") && symptoms.includes("cough")) {
+    mockDiagnosis = {
+      disease: "Flu or COVID-19",
+      tests: ["RT-PCR", "Chest X-Ray", "Blood Test"],
+      doctor: "Pulmonologist"
+    };
+  } else if (symptoms.includes("headache") && symptoms.includes("nausea")) {
+    mockDiagnosis = {
+      disease: "Migraine",
+      tests: ["Neurological Exam", "MRI"],
+      doctor: "Neurologist"
+    };
+  } else if (
+    (symptoms.includes("swollen") && symptoms.includes("feet")) ||
+    (symptoms.includes("leg") && symptoms.includes("pain"))
+  ) {
+    mockDiagnosis = {
+      disease: "Water Retention or Poor Circulation",
+      tests: ["Kidney Function Test", "Doppler Ultrasound"],
+      doctor: "Nephrologist"
+    };
+  }
+
+  diseaseName.textContent = mockDiagnosis.disease;
+  mockDiagnosis.tests.forEach(test => {
+    const li = document.createElement("li");
+    li.textContent = test;
+    testList.appendChild(li);
+  });
+  doctorType.textContent = mockDiagnosis.doctor;
+  resultSection.classList.remove("hidden");
+}
+
+function clearFields() {
+  document.getElementById("symptom-input").value = "";
+  document.getElementById("result-section").classList.add("hidden");
+}
+
+document.getElementById("symptom-input").addEventListener("input", () => {
+  document.getElementById("result-section").classList.add("hidden");
+});

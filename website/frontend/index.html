@@ -7,7 +7,7 @@
     <meta name="keywords" content="health, wellness, healthcare, ArogyaSetu, medical, telemedicine, health monitoring">
     <meta name="author" content="ArogyaSetu">
     <title>ArogyaSetu - Professional Health & Wellness Solutions</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
@@ -69,6 +69,36 @@
                 </button>
             </div>
         </section>
+
+
+    <div class="container">
+    <div class="symptom-form">
+      <label for="symptom-input">Enter Symptoms:</label>
+      <input type="text" id="symptom-input" name="symptoms" placeholder="e.g. sore throat, fever" autocomplete="off"/>
+      <div id="suggestions">Enter a symptom above to get test suggestions.</div>
+      <div class="button-group">
+        <button onclick="getDiagnosis()">Get Diagnosis</button>
+        <button onclick="clearFields()" class="clear-btn">Clear</button>
+      </div>
+    </div>
+
+    <div class="result-section hidden" id="result-section">
+      <h2>Diagnosis Result</h2>
+      <div class="card">
+        <h3>🩺 Possible Condition:</h3>
+        <p id="disease-name">—</p>
+      </div>
+      <div class="card">
+        <h3>🧪 Recommended Tests:</h3>
+        <ul id="test-list"></ul>
+      </div>
+      <div class="card">
+        <h3>👨‍⚕ Suggested Doctor:</h3>
+        <p id="doctor-type">—</p>
+      </div>
+    </div>
+  </div>
+  </div>
 
         <section id="services" class="section" aria-labelledby="services-title">
             <div class="container">
