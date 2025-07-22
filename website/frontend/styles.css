@@ -1,3 +1,4 @@
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -523,21 +524,21 @@ body {
     .nav-container {
         padding: 0 1.5rem;
     }
-
+    
     .nav-menu {
         gap: 0.25rem;
     }
-
+    
     .nav-link {
         padding: 0.625rem 0.875rem;
         font-size: 0.9rem;
     }
-
+    
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
     }
-
+    
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem;
@@ -549,7 +550,7 @@ body {
         padding: 0 1rem;
         min-height: 64px;
     }
-
+    
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -575,7 +576,7 @@ body {
         margin: 0;
         width: 100%;
     }
-
+    
     .nav-link {
         padding: 1rem 2rem;
         font-size: 1.1rem;
@@ -585,14 +586,14 @@ body {
         color: #000000;
         z-index: 1;
     }
-
+    
     .nav-link:hover {
         background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
         transform: none;
         box-shadow: none;
     }
-
+    
     .nav-link::after {
         display: none;
     }
@@ -620,33 +621,33 @@ body {
     .hero-content {
         padding: 0 1rem;
     }
-
+    
     .hero-content h1 {
         font-size: 2.5rem;
     }
-
+    
     .hero-content p {
         font-size: 1.1rem;
     }
-
+    
     .services-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-
+    
     .service-card {
         padding: 2.5rem 1.5rem;
     }
-
+    
     .section {
         padding: 4rem 0;
     }
-
+    
     .about-content,
     .contact-content {
         padding: 1.5rem 0;
     }
-
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -659,47 +660,47 @@ body {
         padding: 0 0.75rem;
         min-height: 56px;
     }
-
+    
     .nav-logo .logo {
         font-size: 1.375rem;
     }
-
+    
     .nav-logo .logo i {
         font-size: 1.75rem;
         margin-right: 0.5rem;
     }
-
+    
     .nav-menu {
         top: 56px;
         height: calc(100vh - 56px);
         background: #4F46E5;
     }
-
+    
     .hero-content h1 {
         font-size: 2rem;
     }
-
+    
     .hero-content p {
         font-size: 1rem;
     }
-
+    
     .btn-primary {
         padding: 0.875rem 1.75rem;
         font-size: 0.95rem;
     }
-
+    
     .service-card {
         padding: 2rem 1rem;
     }
-
+    
     .service-card i {
         font-size: 3rem;
     }
-
+    
     .service-card h3 {
         font-size: 1.25rem;
     }
-
+    
     .about-content p,
     .contact-content p {
         font-size: 1rem;
@@ -771,102 +772,3 @@ html {
 .fade-in:nth-child(1) { animation-delay: 0.2s; }
 .fade-in:nth-child(2) { animation-delay: 0.4s; }
 .fade-in:nth-child(3) { animation-delay: 0.6s; } 
-
-
-
-.container {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #4F46E5;
-}
-
-.symptom-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input[type="text"] {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.button-group {
-  display: flex;
-  gap: 10px;
-}
-
-button {
-  padding: 10px;
-  font-size: 16px;
-  background-color: #4F46E5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #2b7a78;
-}
-
-.clear-btn {
-  background-color: #dc3545;
-}
-
-.clear-btn:hover {
-  background-color: #c82333;
-}
-
-.result-section {
-  margin-top: 30px;
-  transition: all 0.3s ease-in-out;
-}
-
-.card {
-  background-color: #eef2ff;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .container {
-    margin: 20px;
-    padding: 20px;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  input[type="text"], button {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  .button-group {
-    flex-direction: column;
-  }
-}
