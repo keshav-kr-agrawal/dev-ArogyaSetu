@@ -840,3 +840,32 @@ body.form-page {
   background-color: #3e39c9;
   transform: translateY(-2px);
 }
+
+/* Suggestions Container */
+.suggestions {
+  margin-top: -10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  position: relative;
+}
+
+/* Individual Suggestion Item */
+.suggestions div {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 15px;
+  color: #1f2937;
+}
+
+.suggestions div:hover {
+  background-color: #f3f4f6;
+  color: #4F46E5;
+  font-weight: 500;
+}

@@ -68,14 +68,15 @@
                     <span>Get Started Today</span>
                 </button>
 
-            <div class="form-container">
-                <h1>Smart Health Diagnosis</h1>
-                <div class="input-container">
-                    <input type="text" id="symptom-input" placeholder="Enter symptoms like fever, cough, etc." />
-                    <button id="getSuggestionsBtn">Get Test Suggestions</button>
+                <!-- ✅ ADDED: Symptom-based suggestion input -->
+                <div class="form-container">
+                    <h2>Smart Health Diagnosis</h2>
+                    <div class="input-container">
+                        <input type="text" id="symptom-input" placeholder="Enter symptoms like fever, cough, etc." />
+                        <button id="getSuggestionsBtn">Get Test Suggestions</button>
+                    </div>
+                    <ul id="suggestions"></ul>
                 </div>
-            </div>
-
             </div>
         </section>
 
@@ -171,4 +172,4 @@
 
     <script src="script.js"></script>
 </body>
-</html> 
+</html>
