@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AarogyaSetu Health Assistant – Modern, animated, and highly visual health-assistant web application.">
+  <title>AarogyaSetu Health Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body class="dark-mode landing-bg">
+  <div id="particles-js"></div>
+  <nav class="navbar fixed-nav">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">AarogyaSetu</a>
+      <div class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="ask-ai.html" class="nav-link">Ask AI</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="nav-link btn-login">Login</a></li>
+      </ul>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">
+        <span class="icon-moon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="main-content" role="main">
+    <section id="home" class="hero dark-hero" aria-labelledby="hero-title">
+      <div class="hero-visual">
+        <div id="heroLottie" class="lottie-hero" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content">
+        <h1 id="hero-title" class="headline animated-gradient-text">Your Health, Reimagined</h1>
+        <p class="hero-desc fade-in">AarogyaSetu Health Assistant delivers futuristic, professional care through AI, secure telemedicine, and real-time wellness insights. Experience healthcare for the next generation.</p>
+        <a href="ask-ai.html" class="btn-primary neon cta-btn">Check Your Health</a>
+        <div class="scroll-hint">
+          <span class="scroll-text">Scroll for more</span>
+          <span class="icon-scroll"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title" class="section-title">Our Professional Services</h2>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <i class="fas fa-user-md" aria-hidden="true"></i>
+            <h3>Expert Consultation</h3>
+            <p>Connect with board-certified healthcare professionals through our secure telemedicine platform for comprehensive medical consultations.</p>
+          </div>
+          <div class="service-card fade-in">
+            <i class="fas fa-heart" aria-hidden="true"></i>
+            <h3>Health Monitoring</h3>
+            <p>Advanced health tracking and monitoring solutions with real-time data analysis and personalized insights for optimal wellness.</p>
+          </div>
+          <div class="service-card fade-in">
+            <i class="fas fa-pills" aria-hidden="true"></i>
+            <h3>Medication Management</h3>
+            <p>Intelligent medication reminders, dosage tracking, and comprehensive management systems to ensure treatment adherence.</p>
+            </p>
+          </div>
+          <div class="service-card fade-in">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <h3>Health Analytics</h3>
+            <p>Comprehensive health analytics and reporting with actionable insights to track your wellness journey and progress.</p>
+          </div>
+          <div class="service-card fade-in">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <h3>Secure Platform</h3>
+            <p>Enterprise-grade security with HIPAA compliance ensuring your health data remains private and protected at all times.</p>
+          </div>
+          <div class="service-card fade-in">
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+            <h3>Mobile Access</h3>
+            <p>Seamless mobile experience with our intuitive app, providing healthcare access anytime, anywhere with just a tap.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">About AarogyaSetu</h2>
+        <div class="about-content">
+          <p>AarogyaSetu is a leading healthcare technology company dedicated to revolutionizing the way people access and manage their health. Our platform combines cutting-edge technology with expert medical care to provide comprehensive health solutions that empower individuals to take control of their wellness journey.</p>
+          <p>With a team of experienced healthcare professionals and innovative technologists, we are committed to making quality healthcare accessible, affordable, and convenient for everyone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <p>Ready to experience the future of healthcare? Contact our team to learn more about how AarogyaSetu can support your health and wellness goals.</p>
+          <a href="contact.html" class="btn btn-primary neon" aria-label="Contact AarogyaSetu">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>Contact Us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AarogyaSetu</h3>
+          <p>Your trusted partner for professional healthcare solutions.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-envelope"></i> info@arogyasetu.com</p>
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AarogyaSetu. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

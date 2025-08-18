@@ -1,0 +1,112 @@
+<!--
+  AarogyaSetu Health Assistant - Login/Signup Page
+  Glassmorphism, Neon Glow, Animated Background, Responsive
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AarogyaSetu Health Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.2/lottie.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="dark-mode login-bg">
+  <div id="particles-js"></div>
+  <nav class="navbar fixed-nav">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">AarogyaSetu</a>
+      <div class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-links nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="ask-ai.html" class="nav-link">Ask AI</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="nav-link active btn-login">Login</a></li>
+      </ul>
+      <button id="darkModeToggle" class="dark-toggle" aria-label="Toggle dark mode">
+        <span class="icon-moon"></span>
+      </button>
+    </div>
+  </nav>
+  <main class="centered-form">
+    <div class="glass-card neon-glow scroll-reveal" id="authCard">
+      <div class="form-toggle">
+        <button id="loginTab" class="active">Login</button>
+        <button id="signupTab">Sign Up</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <h2 class="animated-text">Welcome Back</h2>
+        <div class="input-group">
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required autocomplete="username">
+        </div>
+        <div class="input-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn-primary neon">Login</button>
+        <button type="button" class="google-btn">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo" class="google-icon">
+          Login with Google
+        </button>
+      </form>
+      <form id="signupForm" class="auth-form hidden">
+        <h2 class="animated-text">Create Account</h2>
+        <div class="input-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" required autocomplete="username">
+        </div>
+        <div class="input-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" required autocomplete="new-password">
+        </div>
+        <button type="submit" class="btn-primary neon">Sign Up</button>
+        <button type="button" class="google-btn">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google logo" class="google-icon">
+          Sign Up with Google
+        </button>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>AarogyaSetu</h3>
+          <p>Your trusted partner for professional healthcare solutions.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ask-ai.html">Ask AI</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-envelope"></i> info@arogyasetu.com</p>
+          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AarogyaSetu. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    // particles.js config for animated background
+    particlesJS.load('particles-js', 'assets/particles-dark.json', function() {});
+  </script>
+</body>
+</html>
